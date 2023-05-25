@@ -27,14 +27,13 @@ class Pokemon(object):
         return "El pokemon {}, de tipo {} tiene {} PS, {} de ataque, {} de ataque especial, {} de defensa especial y {} de velocidad".format(self.nombre, self.tipo, self.tipo_ps, self.tipo_ataque, self.tipo_ataque_esp, self.tipo_defensa_esp, self.tipo_velocidad)
        
 
-
+i = random.randint(1, 7)
 # random.sample(list_vehic, 3)
 # Experimentacion
 import unittest, random
+lista_pokemon = []
 class TestPokemon(unittest.TestCase):
-    lista_pokemon = []
     def setUp(self):
-        lista_pokemon = []
         self.pokemon1 = Pokemon("Pikachu", "Electrico")
         self.pokemon2 = Pokemon("Charmander", "Fuego")
         self.pokemon3 = Pokemon("Squirtle", "Agua")
@@ -42,8 +41,15 @@ class TestPokemon(unittest.TestCase):
         self.pokemon5 = Pokemon("Onix", "Tierra")
         self.pokemon6 = Pokemon("Gastly", "Fantasma")
         self.pokemon7 = Pokemon("Snorlax", "Normal")
-        lista_pokemon = [self.pokemon1, self.pokemon2, self.pokemon3, self.pokemon4, self.pokemon5, self.pokemon6, self.pokemon7]
+        lista_pokemon.append(self.pokemon1)
+        lista_pokemon.append(self.pokemon2)
+        lista_pokemon.append(self.pokemon3)
+        lista_pokemon.append(self.pokemon4)
+        lista_pokemon.append(self.pokemon5)
+        lista_pokemon.append(self.pokemon6)
+        lista_pokemon.append(self.pokemon7)
     def test_clasificacion(self, lista_pokemon):
+        lista_pokemon = random.sample(lista_pokemon, i)
         
 
             # hAZTE CON TODOS poKEMON
