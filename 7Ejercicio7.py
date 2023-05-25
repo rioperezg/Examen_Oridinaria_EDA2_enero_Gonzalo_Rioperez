@@ -7,26 +7,33 @@ partir de la siguiente tabla y desarrollar las funciones para comprimir y descom
 """
 class nodoArbolHuffman(object):
     
-    def __init__(self, info, valor):
+    def __init__(self, info, frecuencia):
         self.izq = None
         self.der = None
-        self.info = info
-        self.valor = valor
+        self.info = int(input("(Pulse enter si quiere salir)Ingrese el caracter: "))
+        self.frecuencia = float(input("Pulse enter si quiere salir)Ingrese la frecuencia: "))
+
 class nodoArbol(object):
     def __init__(self, info):
         self.izq = None
         self.der = None
         self.info = info
-
-class Caracter(object):
-    def __init__(self):
-        size = int(input("Cuantas letras tiene la tabla en total?: "))
-        self.string = input("Caracter: ")
-        self.cantidad = int(input("Cantidad: "))
-        self.frecuencia = self.cantidad / size
+    def insertar_nodo(raiz, dato, frecuencia):
+        if(raiz is None):
+            raiz = nodoArbolHuffman(dato, frecuencia)
+        elif(dato < raiz.info):
+            raiz.izq = nodoArbolHuffman.insertar_nodo(raiz.izq, dato)
+        else:
+            raiz.der = nodoArbolHuffman.insertar_nodo(raiz.der, dato)
+            return raiz
+        
 raiz = None
-letra = Caracter()
-while(letra.string != ""):
+i = int(input("Cuantas letras va a ingresar: "))
+while(i != 0):
+    raiz = nodoArbol.insertar_nodo()
+
+
+
     
     # Hay q almacenar primeramente los caracteres en una lista segun peso y orden alfabetico
 
