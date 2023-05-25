@@ -5,7 +5,18 @@ transmiten. Por lo cual, nos solicita desarrollar un algoritmo que permita compr
 puedan ser interceptados. Contemplando los siguientes requerimientos, implementar un algoritmo que pueda crear un árbol de Huffman a 
 partir de la siguiente tabla y desarrollar las funciones para comprimir y descomprimir un mensaje.
 """
-
+class nodoArbolHuffman(object):
+    
+    def __init__(self, info, valor):
+        self.izq = None
+        self.der = None
+        self.info = info
+        self.valor = valor
+class nodoArbol(object):
+    def __init__(self, info):
+        self.izq = None
+        self.der = None
+        self.info = info
 
 class Caracter(object):
     def __init__(self):
@@ -14,13 +25,11 @@ class Caracter(object):
         self.cantidad = int(input("Cantidad: "))
         self.frecuencia = self.cantidad / size
 raiz = None
-lista_de_nums = Lista()
 letra = Caracter()
 while(letra.string != ""):
-    Letra = nodoArbolHuffman(info=letra.string, valor=letra.frecuencia)
+    
     # Hay q almacenar primeramente los caracteres en una lista segun peso y orden alfabetico
-    Lista.insertar(lista_de_nums, Letra.info, campo = Letra.valor)
-    letra = Caracter()
+
 
 
 
@@ -47,5 +56,3 @@ def decodificar(cadena, arbol_huff):
             cadena_deco += raiz_aux.caracter
             raiz_aux = arbol_huff
     return cadena_deco
-
-Lista.barrido(lista_de_nums)
