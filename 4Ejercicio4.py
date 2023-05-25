@@ -92,7 +92,8 @@ def Matriz_Grafo(grafo):
 #Para la construcción de la matriz Z lo que hemos hecho es tomar los vértices del grafo
 #y ver como estaban conectadas esas posiciones según los movimientos que pued realizar la ficha del caballo.
 
-
+# Ahora deberiamos hacer el resultado la funcion elevada...
+Z = Matriz_Grafo(red_pokemon)
 sum(Z^2)
 sum(Z^3)
 sum(Z^4)
