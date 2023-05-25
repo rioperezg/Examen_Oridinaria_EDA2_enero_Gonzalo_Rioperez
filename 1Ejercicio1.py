@@ -14,8 +14,8 @@ class Pokemon(object):
     def __init__(self, nombre, tipo):
         self.nombre = nombre
         self.tipo = tipo
-    def __str__(self):
-        return "El pokemon {}, de tipo {} se ha creado con exito".format(self.nombre, self.tipo)
+        print("El pokemon se ha creado con exito")
+
     # Ahora pasaremos a crear un metodo clasificacion que clasifique a los pokemon segun su tipo de la la siguiente manera:
     # los PS, el Ataque, la Defensa, el Ataque Especial, la Defensa Especial y la Velocidad.
     def clasificacion(self, tipo_ps, tipo_ataque, tipo_ataque_esp, tipo_defensa_esp, tipo_velocidad):
