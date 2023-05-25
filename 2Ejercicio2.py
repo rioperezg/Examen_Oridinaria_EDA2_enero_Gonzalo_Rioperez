@@ -37,3 +37,27 @@ i = random.randint(1, 7)
 import unittest, random
 lista_pokemon = []
 class TestPokemon(unittest.TestCase):
+    def setUp(self):
+        self.pokemon1 = Pokemon("Pikachu", "Electrico")
+        self.pokemon2 = Pokemon("Charmander", "Fuego")
+        self.pokemon3 = Pokemon("Squirtle", "Agua")
+        self.pokemon4 = Pokemon("Bulbasaur", "Planta")
+        self.pokemon5 = Pokemon("Onix", "Tierra")
+        self.pokemon6 = Pokemon("Gastly", "Fantasma")
+        self.pokemon7 = Pokemon("Snorlax", "Normal")
+        lista_pokemon.append(self.pokemon1)
+        lista_pokemon.append(self.pokemon2)
+        lista_pokemon.append(self.pokemon3)
+        lista_pokemon.append(self.pokemon4)
+        lista_pokemon.append(self.pokemon5)
+        lista_pokemon.append(self.pokemon6)
+        lista_pokemon.append(self.pokemon7)
+    def test_str(self, lista = lista_pokemon):
+        lista = random.sample(lista, i)
+        if lista == []:
+            print("No hay pokemon")
+        else:
+            pokemon = lista[0]
+            lista.remove(pokemon)
+            self.assertEqual(str(pokemon), "El pokemon {}, de tipo {} se ha creado con exito".format(pokemon.nombre, pokemon.tipo))
+            return test_str(self, lista)
