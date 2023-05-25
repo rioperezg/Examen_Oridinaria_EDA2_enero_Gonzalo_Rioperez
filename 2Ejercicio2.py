@@ -60,4 +60,4 @@ class TestPokemon(unittest.TestCase):
             pokemon = lista[0]
             lista.remove(pokemon)
             self.assertEqual(str(pokemon), "El pokemon {}, de tipo {} se ha creado con exito".format(pokemon.nombre, pokemon.tipo))
-            return test_str(self, lista)
+            return TestPokemon.test_Str(self, lista)
