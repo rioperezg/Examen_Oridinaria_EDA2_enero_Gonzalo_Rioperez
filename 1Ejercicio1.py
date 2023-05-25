@@ -41,7 +41,7 @@ tipo_electrico_ps = input("Introduzca los PS: ")
 tipo_electrico_ataque = input("Introduzca el ataque: ")
 tipo_electrico_ataque_esp = input("Introduzca el ataque especial: ")
 tipo_electrico_defensa_esp = input("Introduzca la defensa especial: ")
-tipoelectrico_velocidad = input("Introduzca la velocidad: ")
+tipo_electrico_velocidad = input("Introduzca la velocidad: ")
 
 print("Bienvenido al programa de clasificacion de pokemon")
 print("Introduzca las caracteristicas para tipo Normal: ")
@@ -69,20 +69,50 @@ class Pokemon(object):
 
     # Ahora pasaremos a crear un metodo clasificacion que clasifique a los pokemon segun su tipo de la la siguiente manera:
     # los PS, el Ataque, la Defensa, el Ataque Especial, la Defensa Especial y la Velocidad.
-    def clasificacion(self, PS, Ataque, Defensa, Ataque_Especial, Defensa_Especial, Velocidad):
+    def clasificacion(self, tipo, PS, Ataque, Defensa, Ataque_Especial, Defensa_Especial, Velocidad):
         if tipo == "Agua":
-
+            Ps = tipo_agua_ps
+            Ataque = tipo_agua_ataque
+            Ataque_Especial = tipo_agua_ataque_esp
+            Defensa_Especial = tipo_agua_defensa_esp
+            Velocidad = tipo_agua_velocidad
+            return "El pokemon {}, de tipo {} tiene {} PS, {} de ataque, {} de ataque especial, {} de defensa especial y {} de velocidad".format(self.nombre, self.tipo, PS, Ataque, Defensa, Ataque_Especial, Defensa_Especial, Velocidad)
         elif tipo == "Electrico":
-
+            Ps = tipo_electrico_ps
+            Ataque = tipo_electrico_ataque
+            Ataque_Especial = tipo_electrico_ataque_esp
+            Defensa_Especial = tipo_electrico_defensa_esp
+            Velocidad = tipo_electrico_velocidad
+            return "El pokemon {}, de tipo {} tiene {} PS, {} de ataque, {} de ataque especial, {} de defensa especial y {} de velocidad".format(self.nombre, self.tipo, PS, Ataque, Defensa, Ataque_Especial, Defensa_Especial, Velocidad)
         elif tipo == "Fuego":
-
-        elif tipo == "Planta":
-
+            Ps = tipo_fuego_ps
+            Ataque = tipo_fuego_ataque
+            Ataque_Especial = tipo_fuego_ataque_esp
+            Defensa_Especial = tipo_fuego_defensa_esp
+            Velocidad = tipo_fuego_velocidad
+            return "El pokemon {}, de tipo {} tiene {} PS, {} de ataque, {} de ataque especial, {} de defensa especial y {} de velocidad".format(self.nombre, self.tipo, PS, Ataque, Defensa, Ataque_Especial, Defensa_Especial, Velocidad)
         elif tipo == "Tierra":
-
+            Ps = tipo_tierra_ps
+            Ataque = tipo_tierra_ataque
+            Ataque_Especial = tipo_tierra_ataque_esp
+            Defensa_Especial = tipo_tierra_defensa_esp
+            Velocidad = tipo_tierra_velocidad
+            return "El pokemon {}, de tipo {} tiene {} PS, {} de ataque, {} de ataque especial, {} de defensa especial y {} de velocidad".format(self.nombre, self.tipo, PS, Ataque, Defensa, Ataque_Especial, Defensa_Especial, Velocidad)
         elif tipo == "Fantasma":
+            Ps = tipo_Fantasma_ps
+            Ataque = tipo_Fantasma_ataque
+            Ataque_Especial = tipo_Fantasma_ataque_esp
+            Defensa_Especial = tipo_Fantasma_defensa_esp
+            Velocidad = tipo_Fantasma_velocidad
+            return "El pokemon {}, de tipo {} tiene {} PS, {} de ataque, {} de ataque especial, {} de defensa especial y {} de velocidad".format(self.nombre, self.tipo, PS, Ataque, Defensa, Ataque_Especial, Defensa_Especial, Velocidad)
 
         elif tipo == "Normal":
+            Ps = tipo_Normal_ps
+            Ataque = tipo_Normal_ataque
+            Ataque_Especial = tipo_Normal_ataque_esp
+            Defensa_Especial = tipo_Normal_defensa_esp
+            Velocidad = tipo_Normal_velocidad
+            return "El pokemon {}, de tipo {} tiene {} PS, {} de ataque, {} de ataque especial, {} de defensa especial y {} de velocidad".format(self.nombre, self.tipo, PS, Ataque, Defensa, Ataque_Especial, Defensa_Especial, Velocidad)
 
 
 
@@ -118,3 +148,10 @@ class TestPokemon(unittest.TestCase):
         lista_pokemon.append(self.pokemon7)
     def test_clasificacion(self, lista_pokemon):
         lista_pokemon = random.sample(lista_pokemon, i)
+        if lista_pokemon == []:
+            print("No hay pokemon")
+        else:
+            pokemon = lista_pokemon[0]
+            lista_pokemon.remove(pokemon)
+            self.assertEqual(pokemon.clasificacion(pokemon.tipo, tipo_agua_ps, tipo_agua_ataque, tipo_agua_ataque_esp, tipo_agua_defensa_esp, tipo_agua_velocidad), "El pokemon {}, de tipo {} tiene {} PS, {} de ataque, {} de ataque especial, {} de defensa especial y {} de velocidad".format(pokemon.nombre, pokemon.tipo, tipo_agua_ps, tipo_agua_ataque, tipo_agua_ataque_esp, tipo_agua_defensa_esp, tipo_agua_velocidad))
+            return TestPokemon.test_clasificacion(self, lista_pokemon)
