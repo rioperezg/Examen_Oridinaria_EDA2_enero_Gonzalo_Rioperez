@@ -10,7 +10,7 @@ los PS, el Ataque, la Defensa, el Ataque Especial, la Defensa Especial y la Velo
 Crea una lista con un numero arbitrario de objetos tipo Pokemon. Recorre los elementos de la lista, y prueba a ejecutar el método 
 clasificacion de cada objeto que has creado.
 """
-
+Agua, Fuego, Tierra, Electrico, Normal, Fantasma
 class Pokemon(object):
     def __init__(self, nombre, tipo):
         self.nombre = nombre
@@ -19,14 +19,31 @@ class Pokemon(object):
 
     # Ahora pasaremos a crear un metodo clasificacion que clasifique a los pokemon segun su tipo de la la siguiente manera:
     # los PS, el Ataque, la Defensa, el Ataque Especial, la Defensa Especial y la Velocidad.
-    def clasificacion(self, tipo_ps, tipo_ataque, tipo_ataque_esp, tipo_defensa_esp, tipo_velocidad):
+    def clasificacion(self, tipo):
+        if tipo == "Agua":
+
+        elif tipo == "Electrico":
+
+        elif tipo == "Fuego":
+
+        elif tipo == "Planta":
+
+        elif tipo == "Tierra":
+
+        elif tipo == "Fantasma":
+
+        elif tipo == "Normal":
+
+
+
+"""
         self.tipo_ps = tipo_ps
         self.tipo_ataque = tipo_ataque
         self.tipo_ataque_esp = tipo_ataque_esp  
         self.tipo_defensa_esp = tipo_defensa_esp
         self.tipo_velocidad = tipo_velocidad
         return "El pokemon {}, de tipo {} tiene {} PS, {} de ataque, {} de ataque especial, {} de defensa especial y {} de velocidad".format(self.nombre, self.tipo, self.tipo_ps, self.tipo_ataque, self.tipo_ataque_esp, self.tipo_defensa_esp, self.tipo_velocidad)
-       
+"""
 
 i = random.randint(1, 7)
 # random.sample(list_vehic, 3)
