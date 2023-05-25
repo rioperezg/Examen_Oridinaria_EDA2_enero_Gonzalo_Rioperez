@@ -52,10 +52,10 @@ class TestPokemon(unittest.TestCase):
         lista_pokemon.append(self.pokemon5)
         lista_pokemon.append(self.pokemon6)
         lista_pokemon.append(self.pokemon7)
-    def test_str(self, lista = lista_pokemon):
+    def test_Str(self, lista = lista_pokemon):
         lista = random.sample(lista, i)
         if lista == []:
-            print("No hay pokemon")
+            return("No hay pokemon")
         else:
             pokemon = lista[0]
             lista.remove(pokemon)
