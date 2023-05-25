@@ -24,4 +24,74 @@ sumar todos los teletransportes que resulten de partir de las demás rutas. En t
 teletransportes son 46. Una vez desarrollado el algoritmo, completa la siguiente tabla.
 """
 
-# Importamos las herramientas necesarias
+# Implementamos las herramientas necesarias
+class nodoArista(object):
+    def __init__(self, info , destino):
+        self.info = info
+        self.destino = destino
+        self.sig = None
+class nodoVertice(object):
+    def __init__(self, info):
+        self.info = info
+        self.sig = None
+        self.visitado = False
+        self.adyacentes = Arista()
+class Grafo(object):
+    def __init__(self, dirigido = True):
+        self.inicio = None
+        self.dirigido = dirigido
+        self.tamaño = 0
+class Arista(object):
+    def __init__(self):
+        self.inicio = None
+        self.tamaño = 0
+
+    def insertar_vertice(grafo, dato):
+        nodo = nodoVertice(dato)
+        if (grafo.inicio is None or grafo.inicio.info > dato):
+            nodo.sig = grafo.inicio
+            grafo.inicio = nodo
+        else:
+            ant = grafo.inicio
+            act = grafo.inicio.sig
+            while(act is not None and act.info < dato):
+                ant = act
+                act = act.sig
+            nodo.sig = act
+            ant.sig = nodo
+        grafo.tamaño += 1
+
+
+red_pokemon = Grafo(False)
+# Tenemos 8 vertices
+ruta = input("Ingrese la ruta: ")
+i = 0
+while(i < 8):
+    Arista.insertar_vertice(red_pokemon, ruta)
+    ruta = input("Ingrese la ruta: ")
+    i += 1
+# El grafo generara un matriz de adyacencia de 8x8 la cual si la elevamos a lo que sea obtendremos el rsultado de los posibles teletransportes
+def Matriz():
+
+
+
+
+# using LinearAlgebra
+
+#La matriz Z es la matriz de adyacencia del grafo. 
+#Para la construcción de la matriz Z lo que hemos hecho es tomar los vértices del grafo
+#y ver como estaban conectadas esas posiciones según los movimientos que pued realizar la ficha del caballo.
+
+Z= [0 0 0 0 0 1 0 1 0 0; 0 0 0 0 0 0 1 0 1 0; 0 0 0 1 0 0 0 1 0 0; 0 0 1 0 0 0 0 0 1 1; 0 0 0 0 0 0 0 0 0 0; 1 0 0 0 0 0 1 0 0 1; 0 1 0 0 0 1 0 0 0 0; 1 0 1 0 0 0 0 0 0 0; 0 1 0 1 0 0 0 0 0 0; 0 0 0 1 0 1 0 0 0 0]
+
+sum(Z^2)
+sum(Z^3)
+sum(Z^4)
+sum(Z^5)
+sum(Z^8)
+sum(Z^10)
+sum(Z^15)
+sum(Z^18)
+sum(Z^21)
+sum(Z^23)
+sum(Z^32)
