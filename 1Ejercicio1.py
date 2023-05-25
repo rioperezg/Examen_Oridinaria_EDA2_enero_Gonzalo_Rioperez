@@ -20,16 +20,47 @@ tipo_agua_defensa_esp = input("Introduzca la defensa especial: ")
 tipo_agua_velocidad = input("Introduzca la velocidad: ")
 
 print("Bienvenido al programa de clasificacion de pokemon")
-print("Introduzca las caracteristicas para tipo agua: ")
-tipo_agua_ps = input("Introduzca los PS: ")
-tipo_agua_ataque = input("Introduzca el ataque: ")
-tipo_agua_ataque_esp = input("Introduzca el ataque especial: ")
-tipo_agua_defensa_esp = input("Introduzca la defensa especial: ")
-tipo_agua_velocidad = input("Introduzca la velocidad: ")
+print("Introduzca las caracteristicas para tipo Fuego: ")
+tipo_fuego_ps = input("Introduzca los PS: ")
+tipo_fuego_ataque = input("Introduzca el ataque: ")
+tipo_fuego_ataque_esp = input("Introduzca el ataque especial: ")
+tipo_fuego_defensa_esp = input("Introduzca la defensa especial: ")
+tipo_fuego_velocidad = input("Introduzca la velocidad: ")
+
+print("Bienvenido al programa de clasificacion de pokemon")
+print("Introduzca las caracteristicas para tipo Tierra: ")
+tipo_tierra_ps = input("Introduzca los PS: ")
+tipo_tierra_ataque = input("Introduzca el ataque: ")
+tipo_tierra_ataque_esp = input("Introduzca el ataque especial: ")
+tipo_tierra_defensa_esp = input("Introduzca la defensa especial: ")
+tipo_tierra_velocidad = input("Introduzca la velocidad: ")
+
+print("Bienvenido al programa de clasificacion de pokemon")
+print("Introduzca las caracteristicas para tipo Tierra: ")
+tipo_electrico_ps = input("Introduzca los PS: ")
+tipo_electrico_ataque = input("Introduzca el ataque: ")
+tipo_electrico_ataque_esp = input("Introduzca el ataque especial: ")
+tipo_electrico_defensa_esp = input("Introduzca la defensa especial: ")
+tipoelectrico_velocidad = input("Introduzca la velocidad: ")
+
+print("Bienvenido al programa de clasificacion de pokemon")
+print("Introduzca las caracteristicas para tipo Normal: ")
+tipo_Normal_ps = input("Introduzca los PS: ")
+tipo_Normal_ataque = input("Introduzca el ataque: ")
+tipo_Normal_ataque_esp = input("Introduzca el ataque especial: ")
+tipo_Normal_defensa_esp = input("Introduzca la defensa especial: ")
+tipo_Normal_velocidad = input("Introduzca la velocidad: ")
+
+print("Bienvenido al programa de clasificacion de pokemon")
+print("Introduzca las caracteristicas para tipo Fantasma: ")
+tipo_Fantasma_ps = input("Introduzca los PS: ")
+tipo_Fantasma_ataque = input("Introduzca el ataque: ")
+tipo_Fantasma_ataque_esp = input("Introduzca el ataque especial: ")
+tipo_Fantasma_defensa_esp = input("Introduzca la defensa especial: ")
+tipo_Fantasma_velocidad = input("Introduzca la velocidad: ")
 
 
 
-Agua, Fuego, Tierra, Electrico, Normal, Fantasma
 class Pokemon(object):
     def __init__(self, nombre, tipo):
         self.nombre = nombre
@@ -38,7 +69,7 @@ class Pokemon(object):
 
     # Ahora pasaremos a crear un metodo clasificacion que clasifique a los pokemon segun su tipo de la la siguiente manera:
     # los PS, el Ataque, la Defensa, el Ataque Especial, la Defensa Especial y la Velocidad.
-    def clasificacion(self, tipo):
+    def clasificacion(self, PS, Ataque, Defensa, Ataque_Especial, Defensa_Especial, Velocidad):
         if tipo == "Agua":
 
         elif tipo == "Electrico":
