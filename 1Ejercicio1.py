@@ -10,6 +10,25 @@ los PS, el Ataque, la Defensa, el Ataque Especial, la Defensa Especial y la Velo
 Crea una lista con un numero arbitrario de objetos tipo Pokemon. Recorre los elementos de la lista, y prueba a ejecutar el método 
 clasificacion de cada objeto que has creado.
 """
+# Empecemos por Agua
+print("Bienvenido al programa de clasificacion de pokemon")
+print("Introduzca las caracteristicas para tipo agua: ")
+tipo_agua_ps = input("Introduzca los PS: ")
+tipo_agua_ataque = input("Introduzca el ataque: ")
+tipo_agua_ataque_esp = input("Introduzca el ataque especial: ")
+tipo_agua_defensa_esp = input("Introduzca la defensa especial: ")
+tipo_agua_velocidad = input("Introduzca la velocidad: ")
+
+print("Bienvenido al programa de clasificacion de pokemon")
+print("Introduzca las caracteristicas para tipo agua: ")
+tipo_agua_ps = input("Introduzca los PS: ")
+tipo_agua_ataque = input("Introduzca el ataque: ")
+tipo_agua_ataque_esp = input("Introduzca el ataque especial: ")
+tipo_agua_defensa_esp = input("Introduzca la defensa especial: ")
+tipo_agua_velocidad = input("Introduzca la velocidad: ")
+
+
+
 Agua, Fuego, Tierra, Electrico, Normal, Fantasma
 class Pokemon(object):
     def __init__(self, nombre, tipo):
