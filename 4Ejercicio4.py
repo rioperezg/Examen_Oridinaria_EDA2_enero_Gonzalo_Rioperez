@@ -71,8 +71,18 @@ while(i < 8):
     ruta = input("Ingrese la ruta: ")
     i += 1
 # El grafo generara un matriz de adyacencia de 8x8 la cual si la elevamos a lo que sea obtendremos el rsultado de los posibles teletransportes
-def Matriz():
-
+def Matriz_Grafo(grafo):
+    matriz = []
+    aux = grafo.inicio
+    while(aux is not None):
+        aux2 = aux.adyacentes.inicio
+        lista = []
+        while(aux2 is not None):
+            lista.append(aux2.destino.info)
+            aux2 = aux2.sig
+        matriz.append(lista)
+        aux = aux.sig
+    return matriz
 
 
 
@@ -82,7 +92,6 @@ def Matriz():
 #Para la construcción de la matriz Z lo que hemos hecho es tomar los vértices del grafo
 #y ver como estaban conectadas esas posiciones según los movimientos que pued realizar la ficha del caballo.
 
-Z= [0 0 0 0 0 1 0 1 0 0; 0 0 0 0 0 0 1 0 1 0; 0 0 0 1 0 0 0 1 0 0; 0 0 1 0 0 0 0 0 1 1; 0 0 0 0 0 0 0 0 0 0; 1 0 0 0 0 0 1 0 0 1; 0 1 0 0 0 1 0 0 0 0; 1 0 1 0 0 0 0 0 0 0; 0 1 0 1 0 0 0 0 0 0; 0 0 0 1 0 1 0 0 0 0]
 
 sum(Z^2)
 sum(Z^3)
