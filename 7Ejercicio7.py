@@ -27,10 +27,10 @@ class nodoArbol(object):
             raiz.der = nodoArbolHuffman.insertar_nodo(raiz.der, dato)
             return raiz
         
-raiz = None
+Raiz = None
 i = int(input("Cuantas letras va a ingresar: "))
 while(i != 0):
-    raiz = nodoArbol.insertar_nodo()
+    raiz = nodoArbol.insertar_nodo(raiz=Raiz)
 
 
 
