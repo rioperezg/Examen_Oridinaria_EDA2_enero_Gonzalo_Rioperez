@@ -30,7 +30,7 @@ class nodoArbol(object):
 Raiz = None
 i = int(input("Cuantas letras va a ingresar: "))
 while(i != 0):
-    raiz = nodoArbol.insertar_nodo(raiz=Raiz)
+    raiz = nodoArbol.insertar_nodo(raiz=Raiz, dato=info, frecuencia=frecuencia)
 
 
 
