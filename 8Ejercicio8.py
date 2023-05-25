@@ -13,90 +13,6 @@ define quién hará qué actividad.
 
 Aquí tienes la tabla generada a partir de los datos proporcionados:
 
-TAREA
-
-DESCRIPCIÓN
-
-DURACIÓN
-
-A
-
-Llamar a la agencia de viajes, reservar una plaza y recibir la conformidad.
-
-20'
-
-B
-
-Llamar a casa para que preparen a los Pokémon.
-
-5'
-
-C
-
-Preparar a los Pokémon.
-
-40'
-
-D
-
-La agencia de viajes prepara el billete.
-
-10'
-
-E
-
-Ir desde el gimnasio a la agencia de viajes a recoger los billetes.
-
-5'
-
-F
-
-Recoger los billetes de la agencia y llevarlos al gimnasio.
-
-10'
-
-G
-
-Ir desde el gimnasio a casa a recoger a los Pokémon.
-
-20'
-
-H
-
-Recoger a los Pokémon y llevarlos al gimnasio.
-
-25'
-
-I
-
-Conversar con los colaboradores para obtener información sobre qué Pokémon llevar en este viaje.
-
-35'
-
-J
-
-Seleccionar los Pokémon más fuertes y dejar instrucciones para el tiempo de la ausencia.
-
-25'
-
-K
-
-Reunir los objetos más importantes para llevar en este viaje.
-
-15'
-
-L
-
-Organizar los objetos.
-
-5'
-
-M
-
-Viajar al aeropuerto y facturar.
-
-25'
-
  
 
 Ahora que tienes una lista de tareas y sus respectivas duraciones, necesitas decidir el camino más corto para completarlas todas. 
@@ -115,10 +31,11 @@ class nodoArista(object):
         self.info = info
         self.destino = destino
         self.sig = None
-class nodoVertice_ferro(object):
-    def __init__(self, info, tipo):
+class nodoVertice_Tareas(object):
+    def __init__(self, info, Peso, descripcion):
         self.info = info
-        self.tipo = tipo
+        self.Peso = Peso
+        self.descripcion = descripcion
         self.sig = None
         self.visitado = False
         self.adyacentes = Arista()
@@ -131,3 +48,89 @@ class Arista(object):
     def __init__(self):
         self.inicio = None
         self.tamaño = 0
+    def insertar_vertice(grafo, dato, Peso, descripcion):
+        nodo = nodoVertice_Tareas(dato, Peso, descripcion)
+        if (grafo.inicio is None or grafo.inicio.info > dato):
+            nodo.sig = grafo.inicio
+            grafo.inicio = nodo
+        else:
+            ant = grafo.inicio
+            act = grafo.inicio.sig
+            while(act is not None and act.info < dato):
+                ant = act
+                act = act.sig
+            nodo.sig = act
+            ant.sig = nodo
+        grafo.tamaño += 1
+    def agregar_arista(origen, dato, destino):
+        nodo = nodoArista(dato, destino)
+        if(origen.inicio is None or origen.inicio.destino > destino):
+            nodo.sig = origen.inicio
+            origen.inicio = nodo
+        else:
+            ant = origen.inicio
+            act = origen.inicio.sig
+            while(act is not None and act.destino < nodo.destino):
+                ant = act
+                act = act.sig
+            nodo.sig = act
+            ant.sig = nodo
+            origen.tamaño += 1
+    def insertar_arista(grafo, dato, origen, destino):
+        Arista.agregar_arista(origen.adyacentes, dato, destino.info)
+        if(not grafo.dirigido):
+            Arista.agregar_arista(destino.adyacentes, dato, origen.info)
+    def eliminar_vertice(grafo, clave):
+        x = None 
+        if(grafo.inicio.info == clave):
+            x = grafo.inicio.info
+            grafo.inicio = grafo.inicio.sig
+            grafo.tamaño -= 1
+        else:
+            ant = grafo.inicio
+            act = grafo.inicio.sig
+            while(act is not None and act.info != clave):
+                ant = act
+                act = act.sig
+            if(act is not None):
+                x = act.info
+                ant.sig = act.sig
+                grafo.tamaño -= 1
+        if(x is not None):
+            aux = grafo.inicio
+            while(aux is not None):
+                if(aux.adyacentes.inicio is not None):
+                    Arista.eliminar_arista(aux.adyacentes, clave)
+                aux = aux.sig
+        return x
+    def barrido_vertices_con_eliminado(grafo, clave):
+        aux = grafo.inicio
+        if(aux is not None):
+            Arista.eliminar_vertice(grafo, clave)
+
+
+
+
+# Hemos de ver que nodos se conectan con otros que equivaldran a las aristas. Primero introducimos los nodos
+nodo = input("(Pulse enter si quiere salir)Nodo: ")
+peso = int(input("Peso: "))
+Descripcion = input("Descripcion: ")
+Peso = peso/100
+Grafo_Tareas = Grafo()
+while(nodo != "" or peso != 0 or Descripcion != ""):
+    Arista.insertar_vertice(Grafo_Tareas, nodo, Peso, Descripcion)
+    nodo = input("(Pulse enter si quiere salir)Nodo: ")
+    peso = int(input("Peso: "))
+    Descripcion = input("Descripcion: ")
+    Peso = peso/100
+
+
+# Ahora introducimos las aristas: Tenemos que ver que nodos se conectan con otros
+# A no conecta con F; B no conecta con H; 
+# Lo haremos de otro modo: Añadiremos un atributo descipcion a cada nodo y preguntaremos al usuario si se conecta con otro nodo
+
+
+
+
+
+
