@@ -11,4 +11,5 @@ exploración;
 Ahora obtenga los Pokemon de tipo Tierra para que custodien al Profesor Oak en una misión de exploración al Bosque Verdanturf y los de tipo 
 Fuego para una misión de exterminación en Cueva Lava.
 """
+import random 
 

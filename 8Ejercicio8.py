@@ -124,10 +124,12 @@ while(nodo != "" or peso != 0 or Descripcion != ""):
     Descripcion = input("Descripcion: ")
     Peso = peso/100
 
-
 # Ahora introducimos las aristas: Tenemos que ver que nodos se conectan con otros
 # A no conecta con F; B no conecta con H; 
 # Lo haremos de otro modo: Añadiremos un atributo descipcion a cada nodo y preguntaremos al usuario si se conecta con otro nodo
+# Si se conecta, preguntaremos el peso de la arista
+
+
 
 
 
